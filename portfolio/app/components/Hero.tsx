@@ -84,7 +84,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="bg-neutral-950 text-white selection:bg-white selection:text-black">
+    <div className="bg-neutral-950 text-white selection:bg-white selection:text-black lg:pr-96">
       {/* Side Navigation */}
       <motion.nav
         initial={{ x: -50, opacity: 0 }}
