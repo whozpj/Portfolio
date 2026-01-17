@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import ChatBot from "./ChatBot";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -592,6 +593,9 @@ export default function Portfolio() {
           </motion.div>
       </motion.div>
       )}
+
+      {/* ChatBot */}
+      <ChatBot />
     </div>
   );
 }
