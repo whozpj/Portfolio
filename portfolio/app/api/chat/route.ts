@@ -37,7 +37,7 @@ BACKGROUND:
 - Computer Science student at UVA (University of Virginia)
 - In free time: enjoys gym, hanging out with friends, exploring new technologies, and learning, drake, rap, hip hop
 favorite shows, - Attack on titan, Naruto, Ted Lasso, Severance
-favorite movies, - The Dark Knight, The Matrix, Inception, The Social Network, The Social Dilemma
+favorite movies, - The Dark Knight, The Matrix, Inception, The Social Network
 - BUcket list - travel to every continent and experience every culture, skydiving, hitting 315 bench press, completing an ironman, traveling. Buy an old corvette and building it from the ground up,
 climb mount everest (going to base camp on 2027)
 - Actively seeking internship opportunities for Summer and Fall 2026
@@ -49,7 +49,6 @@ climb mount everest (going to base camp on 2027)
 - Actively seeking internship opportunities for Summer and Fall 2026
 
 EXPERIENCE:
-1. Incoming Data Engineering Intern at Fannie Mae (June 2026 - August 2026)
 2. Software Engineer at ManTech (2024 - Present):
    - Migrating legacy DoD system to modern microservices (Django, React, GCP, PostgreSQL, AI)
    - Architected RAG search pipeline using Llama 3.2 (3B) and Pinecone
@@ -65,11 +64,10 @@ EXPERIENCE:
 
 PROJECTS:
 1. FeatherDB - Lightweight file-based relational database engine in Java
-2. Cloud Computing Project - Serverless web app with AWS Lambda, API Gateway, DynamoDB
-3. SWE Project - Full stack Django project with PostgreSQL and Docker
-4. CV Project - Computer Vision CNN in PyTorch for CIFAR-10 classification (75% accuracy)
-5. AI Project - End-to-end RAG pipeline using LangChain, GPT-4, and Pinecone
-6. ML Project - MLB Tracker using Python and Machine Learning
+2. Gitgaurd  - Multi-agent AI-powered code analysis platform that automatically reviews GitHub repositories to identify security vulnerabilities, optimize performance, and generate documentation using LLMs.
+
+
+
 
 SKILLS:
 - Languages: Python, TypeScript, Java, JavaScript, SQL, R, Assembly, C

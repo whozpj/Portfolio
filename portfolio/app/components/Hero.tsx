@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ChatBot from "./ChatBot";
+import CursorGlow from "./CursorGlow";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -182,12 +183,7 @@ export default function Portfolio() {
         <h2 className="text-3xl font-light mb-12 tracking-tight">Experience</h2>
         <div className="space-y-12">
           {[
-            {
-              date: "June 2026 — August 2026",
-              role: "Incoming Data Engineering Intern",
-              company: "Fannie Mae",
-              desc: null
-            },
+            
             {
               date: "2024 — Present",
               role: "Software Engineer",
@@ -279,50 +275,17 @@ export default function Portfolio() {
               challenges: "Implementing a robust query parser that handles complex SQL syntax was challenging. Ensuring data consistency during concurrent operations required careful transaction management. Optimizing query performance without a traditional database cache required innovative indexing strategies.",
             },
             {
-              title: "Cloud Computing Project",
-              desc: "End to end project I do during Cloud Computing course where I built a serverless web application that scales automatically based on user demand using AWS Lambda, API Gateway, and DynamoDB.",
-              tags: ["AWS"],
-              github: "https://github.com/whozpj/cloud-project",
-              howItWorks: "The application uses AWS Lambda functions triggered by API Gateway to handle HTTP requests. DynamoDB stores user data with automatic scaling. CloudWatch monitors performance and triggers auto-scaling. The entire infrastructure is defined as code using AWS SAM.",
-              design: "Serverless architecture with API Gateway as the entry point, Lambda functions for business logic, and DynamoDB for data persistence. S3 hosts static assets. CloudFront provides CDN capabilities for global distribution.",
-              challenges: "Managing cold starts in Lambda functions required optimization. DynamoDB partition key design was critical for performance. Implementing proper error handling and retry logic across distributed services was complex.",
-            },
-            {
-              title: "SWE Project",
-              desc: "Full stack project in SWE course in Django team of 4",
-              tags: ["Django", "PostgreSQL", "Docker"],
-              github: "https://github.com/whozpj/swe-project",
-              howItWorks: "Built a full-stack web application using Django REST Framework for the backend API and React for the frontend. PostgreSQL handles data persistence with proper normalization. Docker containers ensure consistent deployment across environments.",
-              design: "MVC architecture with Django models, views, and templates. RESTful API design with proper HTTP methods. Frontend communicates with backend through JSON APIs. Docker Compose orchestrates multi-container deployment.",
-              challenges: "Coordinating with a team of 4 required clear communication and version control practices. Integrating frontend and backend APIs required careful API design. Database migrations and schema changes needed careful planning.",
-            },
-            { 
-              title: "CV Project",
-              desc: "Computer Vision project that classifies images from CIFAR-10 dataset using a custom CNN built in PyTorch, achieving 75% accuracy through data augmentation and hyperparameter tuning.",
-              tags: ["PyTorch", "Python", "Computer Vision"],
-              github: "https://github.com/whozpj/cv-project",
-              howItWorks: "A custom Convolutional Neural Network (CNN) architecture processes 32x32 RGB images. The model uses convolutional layers for feature extraction, pooling layers for dimensionality reduction, and fully connected layers for classification. Data augmentation techniques like rotation, flipping, and color jittering improve generalization.",
-              design: "CNN architecture with 3 convolutional blocks, each followed by batch normalization and ReLU activation. Max pooling reduces spatial dimensions. Dropout layers prevent overfitting. The model is trained using Adam optimizer with learning rate scheduling.",
-              challenges: "Achieving good accuracy on CIFAR-10 required careful hyperparameter tuning. Overfitting was a major challenge, solved through data augmentation and dropout. Training time optimization required GPU acceleration and batch size tuning.",
-            },
-            {
-              title: "AI Project",
-              desc: "Full AI Project that builds an end-to-end RAG pipeline using LangChain, GPT-4, and Pinecone to enable semantic search over large document corpora with low-latency responses.",
-              tags: ["LangChain", "GPT-4", "Pinecone", "Python"],
-              github: "https://github.com/whozpj/ai-project",
-              howItWorks: "Documents are chunked and embedded using OpenAI's embedding model. Embeddings are stored in Pinecone vector database. User queries are embedded and used to search for similar document chunks. Relevant chunks are passed to GPT-4 as context for generating answers. LangChain orchestrates the entire pipeline.",
-              design: "RAG (Retrieval-Augmented Generation) architecture with document ingestion pipeline, vector store (Pinecone), and LLM integration (GPT-4). The system supports multiple document formats and includes query preprocessing and post-processing.",
-              challenges: "Chunking documents optimally to preserve context was challenging. Balancing retrieval accuracy with latency required careful vector search tuning. Managing API costs while maintaining quality required efficient prompt engineering and caching strategies.",
-            },
-            {
-              title: "ML Project",
-              desc: "MLB Tracker",
-              tags: ["Python", "Machine Learning", "Data Analysis"],
-              github: "https://github.com/whozpj/ml-project",
-              howItWorks: "A machine learning application that tracks and analyzes MLB statistics. Data is scraped from public APIs, processed, and used to train predictive models. The system provides insights on player performance and game predictions.",
-              design: "Data pipeline architecture with ETL processes, feature engineering, model training, and prediction serving. The system uses scikit-learn for traditional ML models and provides REST APIs for predictions.",
-              challenges: "Handling missing data and outliers in sports statistics required robust preprocessing. Feature engineering to capture meaningful patterns was time-consuming. Model interpretability was important for explaining predictions to users.",
+              title: "GitGuard",
+              desc: "Multi-agent AI-powered code analysis platform that automatically reviews GitHub repositories to identify security vulnerabilities, optimize performance, and generate documentation using LLMs.",
+              tags: ["LangChain", "Llama 3.1", "FastAPI", "Python", "PostgreSQL", "Pinecone", "Docker", "Heroku"],
+              github: "https://github.com/whozpj/gitguard",
+              howItWorks: "GitGuard uses LangChain to orchestrate three specialized agents—security scanning, performance optimization, and documentation generation—powered by Llama 3.1 via the Groq API. A RAG pipeline with Pinecone vector embeddings provides context-aware suggestions by retrieving relevant code snippets. GitHub webhooks trigger analysis on pull requests, and results are stored in PostgreSQL.",
+              design: "The system follows a microservices-style architecture with FastAPI as the backend, PostgreSQL for persistent storage, and Pinecone for semantic search. GitHub API integrations handle repository access and webhook events. The application is containerized with Docker and deployed on Heroku for scalability and reliability.",
+              challenges: "Designing effective agent specialization required careful prompt engineering. Achieving high accuracy in detecting SQL injection vulnerabilities involved tuning retrieval and evaluation logic. Managing webhook concurrency and ensuring low-latency responses under load were key deployment challenges.",
             }
+            
+
+
           ].map((project, i) => (
             <motion.div 
               key={i} 
@@ -596,6 +559,9 @@ export default function Portfolio() {
 
       {/* ChatBot */}
       <ChatBot />
+
+      {/* Cursor Glow */}
+      <CursorGlow />
     </div>
   );
 }
