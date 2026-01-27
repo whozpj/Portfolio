@@ -196,7 +196,9 @@ export default function Portfolio() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Architected a global RAG search pipeline using quantized Llama 3.2 (3B) and Pinecone to enable natural language querying across distributed databases, transforming unstructured logs into actionable insights while ensuring low-latency data privacy.
+                    Engineered a query builder with 22+ configurable parameters using LangChain and Gemini Flash 1.5, enabling
+natural language queries to automatically execute complex database searches and retrieve relevant files, reducing
+query construction time from 3 minutes to under 20 seconds
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
