@@ -30,8 +30,8 @@ BACKGROUND:
 - Grew up in Chantilly, Virginia
 - Attended Chantilly High School
 - Graduated from Chantilly High School in 2024
-- Attended University of Virginia from 2024 to 2028
-- Graduated from University of Virginia in 2028
+- Attending University of Virginia from 2024 to 2027
+- Still there - I am taking DSA 2, AI Agents, Software Engineering, Computer Vision
 - Currently a Software Engineer at ManTech, focusing on modernizing legacy systems and implementing AI-driven solutions
 - Also actively involved with Candlefish, applying machine learning techniques to real-world challenges
 - Computer Science student at UVA (University of Virginia)
