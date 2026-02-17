@@ -97,7 +97,7 @@ export default function Portfolio() {
           {[
             { id: "hero", label: "Home" },
             { id: "experience", label: "Experience" },
-            { id: "projects", label: "Projects" },
+            { id: "projects", label: "Projects" }, 
             { id: "skills", label: "Skills" },
             { id: "contact", label: "Contact" }
           ].map((item) => (
@@ -183,30 +183,45 @@ export default function Portfolio() {
         <h2 className="text-3xl font-light mb-12 tracking-tight">Experience</h2>
         <div className="space-y-12">
           {[
-            
+
             {
-              date: "2024 — Present",
-              role: "Software Engineer",
-              company: "ManTech",
+              date: "Incoming June 2026",
+              role: "Data Engineering Intern",
+              company: "Fannie Mae",
               desc: (
                 <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                    <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+Incoming June 2026                  </li>
+                </ul>
+              ),
+            },
+            
+            {
+              date: "2024 — Present",
+              role: "Software Development Intern",
+              company: "ManTech",
+              desc: (
+                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+                  <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
                     Migrating a legacy DoD system used at 100+ locations worldwide to a modern microservices architecture using Django, React, GCP, PostgreSQL, and AI.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Engineered a query builder with 22+ configurable parameters using LangChain and Gemini Flash 1.5, enabling
-natural language queries to automatically execute complex database searches and retrieve relevant files, reducing
-query construction time from 3 minutes to under 20 seconds
+                    Built an AI query system using LangGraph and Gemini Flash that translates natural language into complex database searches, reducing query time from 3 minutes to 20 seconds.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Built 4 Django microservices with GraphQL/PostgreSQL and an AI pipeline (OCR + Gemini Flash) reducing inventory processing time by 90% (3m to 20s).
+                    Built 4 Django microservices with GraphQL and PostgreSQL with resilient, monitored services.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Developed React/TS interfaces that condensed workflows by 75%, increasing data-entry efficiency by 50%.
+                    Created an AI pipeline using OCR and Gemini to process vehicle label images, cutting data entry time from 2+ hours to 10 minutes per batch.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Developed React interfaces that streamlined workflows from 8 steps to 4, improving data-entry efficiency by 50%.
                   </li>
                 </ul>
               ),
@@ -219,11 +234,11 @@ query construction time from 3 minutes to under 20 seconds
                 <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Designed a scalable data synthesis engine generating 10K structured inputs with geometric constraints, eliminating a 200+ hour operational bottleneck.
+                    Designed a data synthesis engine that auto-generated 10K architectural blueprints with labeled structural elements, eliminating a 200+ hour manual labeling bottleneck.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-neutral-700">—</span>
-                    Engineered a PyTorch U-Net pipeline with mixed-precision training, achieving 0.89 mIoU with 18ms inference latency.
+                    Built a PyTorch U-Net segmentation model achieving 0.89 mean IoU across 6 blueprint classes with 18ms inference time.
                   </li>
                 </ul>
               ),
@@ -237,15 +252,11 @@ query construction time from 3 minutes to under 20 seconds
               <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                 <li className="flex gap-2">
                   <span className="text-neutral-700">—</span>
-                  Building an AI-powered educational platform using GPT-4 and LangChain to provide personalized AI tutoring agents for K-12 students, resulting in a 30% increase in engagement metrics during the beta phase.
+                  Built a personalized AI tutoring system using LangChain, GPT-4, and ChromaDB that adapts to individual student learning styles for AP Calculus and algebra.
                 </li>
                 <li className="flex gap-2">
                   <span className="text-neutral-700">—</span>
-                  Architected a RAG system using LangChain and GPT-4 to handle 20,000+ dynamic educational documents, providing real-time system context while avoiding the high latency and cost of model fine-tuning.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-neutral-700">—</span>
-                  Developed an automated ETL pipeline using Selenium and BeautifulSoup to transform unstructured data into structured JSON, integrating ChromaDB to eliminate hallucinations, achieving 22 ms inference times.
+                  Created an automated pipeline using Selenium and BeautifulSoup to extract and structure educational content from web sources for AI-powered tutoring.
                 </li>
               </ul>
             ),
@@ -280,11 +291,17 @@ query construction time from 3 minutes to under 20 seconds
               title: "GitGuard",
               desc: "Multi-agent AI-powered code analysis platform that automatically reviews GitHub repositories to identify security vulnerabilities, optimize performance, and generate documentation using LLMs.",
               tags: ["LangChain", "Llama 3.1", "FastAPI", "Python", "PostgreSQL", "Pinecone", "Docker", "Heroku"],
-              github: "https://github.com/whozpj/gitguard",
               howItWorks: "GitGuard uses LangChain to orchestrate three specialized agents—security scanning, performance optimization, and documentation generation—powered by Llama 3.1 via the Groq API. A RAG pipeline with Pinecone vector embeddings provides context-aware suggestions by retrieving relevant code snippets. GitHub webhooks trigger analysis on pull requests, and results are stored in PostgreSQL.",
               design: "The system follows a microservices-style architecture with FastAPI as the backend, PostgreSQL for persistent storage, and Pinecone for semantic search. GitHub API integrations handle repository access and webhook events. The application is containerized with Docker and deployed on Heroku for scalability and reliability.",
               challenges: "Designing effective agent specialization required careful prompt engineering. Achieving high accuracy in detecting SQL injection vulnerabilities involved tuning retrieval and evaluation logic. Managing webhook concurrency and ensuring low-latency responses under load were key deployment challenges.",
-            }
+            },
+            {
+              title: "MLB Pitcher Injury Predictor",
+              desc: "A real-time injury monitoring system for MLB pitchers that analyzes pitch sequences to predict potential injuries before they occur.",
+              tags: ["Python", "PyTorch", "FastAPI", "React", "PostgreSQL", "MLB Statcast", "AWS"],
+              howItWorks: "Continuously monitors MLB pitchers by analyzing their pitch velocity, spin rate, and release mechanics from every game. The system detects subtle biomechanical changes that often precede injuries, providing early warnings 2-3 starts before problems occur."    ,
+              design: "An ETL pipeline ingests real-time pitch data from MLB Statcast API, preprocessing 200K+ sequences into time-series features. An LSTM autoencoder learns normal pitching patterns and flags anomalies indicating injury risk. The FastAPI backend serves predictions stored in PostgreSQL (RDS), with model artifacts on S3 and the React dashboard deployed on AWS EC2."
+        }
             
 
 
@@ -373,14 +390,64 @@ query construction time from 3 minutes to under 20 seconds
     ))}
   </div>
 </section>
+      {/* What I'm Working On Section */}
+      <section id="working-on" className="py-16 px-6 max-w-5xl mx-auto">
+        <h2 className="text-2xl font-light mb-8 tracking-tight">What I'm Working On</h2>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Personal AI Portfolio Enhancements",
+              desc: "Building new features for this portfolio, including a smarter AI chatbot, real-time project updates, and interactive UI elements.",
+              tags: ["Next.js", "TypeScript", "OpenAI", "Framer Motion"],
+              status: "In Progress",
+            },
+            {
+              title: "Live Streaming Platform",
+              desc: "A scalable video streaming service that handles real-time video ingestion, transcoding to multiple qualities, and content delivery with live chat and viewer analytics.",
+              tags: ["Python (FastAPI)", "FFmpeg", "Redis", "PostgreSQL", "WebSockets", "Docker"],
+              status: "In Progress",
+            },
+          ].map((work, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, borderColor: "rgba(255, 255, 255, 0.2)" }}
+              className="group p-8 bg-neutral-900/40 border border-neutral-900 transition-all flex flex-col justify-between cursor-pointer relative"
+            >
+              <div>
+                <h3 className="text-lg font-light mb-3 uppercase tracking-wider text-neutral-200">
+                  {work.title}
+                </h3>
+                <p className="text-neutral-500 text-sm mb-6 leading-relaxed font-light">
+                  {work.desc}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                {work.tags.map((tag) => (
+                  <span 
+                    key={tag} 
+                    className="text-[9px] text-neutral-500 border border-neutral-800 px-2 py-0.5 uppercase tracking-tighter"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <span className="text-xs text-neutral-400 italic">{work.status}</span>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* Footer */}
       <section id="contact" className="py-32 px-6 max-w-4xl mx-auto text-center border-t border-neutral-900">
         <h2 className="text-3xl font-light mb-6 tracking-tight">Get in touch.</h2>
-        <p className="text-neutral-500 text-sm mb-10 max-w-md mx-auto font-light leading-relaxed">Currently looking for 2026 internships. Feel free to reach out for a chat.</p>
+        <p className="text-neutral-500 text-sm mb-10 max-w-md mx-auto font-light leading-relaxed">Currently looking for 2026 summer/fall internships. Feel free to reach out for a chat.</p>
         <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest text-neutral-500">
           <a href="mailto:wyp9mq@virginia.edu" className="hover:text-white transition-colors">Email</a>
-          <a href="https://linkedin.com/in/prithvi-raj" className="hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/prithvi-raj-7015a0250/" className="hover:text-white transition-colors">LinkedIn</a>
           <a href="https://github.com/whozpj" className="hover:text-white transition-colors">GitHub</a>
           <a href="/resume.pdf" className="hover:text-white transition-colors border-b border-neutral-700">Resume</a>
         </div>
