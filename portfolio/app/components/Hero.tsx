@@ -410,8 +410,9 @@ Incoming June 2026                  </li>
             {
               title: "Animal Behavior Recognition System",
               desc: "A computer vision system that detects, counts, and tracks animals in images and videos while classifying their poses to identify and monitor behaviors over time.",
+              tags: ["Python", "OpenCV", "PyTorch"],
               status: "In Progress",
-            },
+            }
           ].map((work, i) => (
             <motion.div 
               key={i} 
