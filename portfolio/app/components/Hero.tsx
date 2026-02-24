@@ -184,18 +184,6 @@ export default function Portfolio() {
         <div className="space-y-12">
           {[
 
-            {
-              date: "Incoming June 2026",
-              role: "Data Engineering Intern",
-              company: "Fannie Mae",
-              desc: (
-                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
-                   <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-Incoming June 2026                  </li>
-                </ul>
-              ),
-            },
             
             {
               date: "2024 — Present",
