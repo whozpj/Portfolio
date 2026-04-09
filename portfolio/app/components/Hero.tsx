@@ -183,16 +183,27 @@ export default function Portfolio() {
         <h2 className="text-3xl font-light mb-12 tracking-tight">Experience</h2>
         <div className="space-y-12">
           {[
-
+            {
+              date: "Incoming August 2026",
+              role: "Software Development Intern",
+              company: "IBM",
+              desc: (
+                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+                   <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>Incoming August 2026
+                  </li>
+                </ul>
+              ),
+            },
             {
               date: "Incoming June 2026",
-              role: "Data Engineering Intern",
+              role: "Software Engineering Intern",
               company: "Fannie Mae",
               desc: (
                 <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                    <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-Incoming June 2026                  </li>
+                    <span className="text-neutral-700">—</span>Incoming June 2026
+                  </li>
                 </ul>
               ),
             },
