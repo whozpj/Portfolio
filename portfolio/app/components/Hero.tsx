@@ -195,18 +195,18 @@ export default function Portfolio() {
                 </ul>
               ),
             },
-            {
-              date: "Incoming June 2026",
-              role: "Software Engineering Intern",
-              company: "Fannie Mae",
-              desc: (
-                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
-                   <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>Incoming June 2026
-                  </li>
-                </ul>
-              ),
-            },
+            // {
+            //   date: "Incoming June 2026",
+            //   role: "Software Engineering Intern",
+            //   company: "Fannie Mae",
+            //   desc: (
+            //     <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+            //        <li className="flex gap-2">
+            //         <span className="text-neutral-700">—</span>Incoming June 2026
+            //       </li>
+            //     </ul>
+            //   ),
+            // },
             
             {
               date: "2024 — Present",
