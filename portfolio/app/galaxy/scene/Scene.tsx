@@ -14,7 +14,7 @@ export default function Scene() {
     >
       <ambientLight intensity={0.15} />
       <Starfield />
-      <CameraRig />
+      <CameraRig progress={0} />
     </Canvas>
   );
 }
