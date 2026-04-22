@@ -10,11 +10,11 @@ import { systems } from "../content";
 import { systemPositions } from "../lib/systems";
 
 interface Props {
-  progress: number;
+  progressRef: React.MutableRefObject<number>;
   onPlanetClick?: (planetId: string) => void;
 }
 
-export default function Scene({ progress, onPlanetClick }: Props) {
+export default function Scene({ progressRef, onPlanetClick }: Props) {
   return (
     <Canvas
       className="!fixed inset-0"
@@ -37,7 +37,7 @@ export default function Scene({ progress, onPlanetClick }: Props) {
         <SolarSystem key={s.id} system={s} onPlanetClick={onPlanetClick} />
       ))}
 
-      <CameraRig progress={progress} />
+      <CameraRig progressRef={progressRef} />
     </Canvas>
   );
 }

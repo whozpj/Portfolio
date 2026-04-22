@@ -19,7 +19,7 @@ export default function GalaxyApp() {
   const reducedMotion = useReducedMotion();
   const enabled = webgl === true && !reducedMotion;
 
-  const { progress } = useScrollProgress(enabled);
+  const { progress, progressRef } = useScrollProgress(enabled);
   const docking = useDocking();
 
   const currentIndex = useMemo(() => {
@@ -43,7 +43,8 @@ export default function GalaxyApp() {
 
   return (
     <>
-      <Scene progress={progress} onPlanetClick={docking.dock} />
+      {/* progressRef drives the canvas (no re-renders); progress state drives DOM overlays */}
+      <Scene progressRef={progressRef} onPlanetClick={docking.dock} />
       <HUD progress={progress} onJumpToSystem={jumpToSystem} />
       <ProgressBar currentIndex={currentIndex} onJump={jumpToSystem} />
       <DetailPanel planetId={docking.dockedPlanetId} onClose={docking.undock} />

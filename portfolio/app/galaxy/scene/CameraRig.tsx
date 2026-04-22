@@ -8,19 +8,19 @@ import { easeInOutCubic, clamp01 } from "../lib/easing";
 import * as THREE from "three";
 
 interface Props {
-  progress: number;
+  progressRef: React.MutableRefObject<number>;
 }
 
 const GALAXY_END = 0.08;
-const LERP_FACTOR = 0.08; // smooth camera lag
+const LERP_FACTOR = 0.08;
 
-export default function CameraRig({ progress }: Props) {
+export default function CameraRig({ progressRef }: Props) {
   const { camera } = useThree();
   const currentPos = useRef(new THREE.Vector3(0, 8, 40));
   const currentLookAt = useRef(new THREE.Vector3(0, 0, -120));
 
   useFrame(() => {
-    const p = clamp01(progress);
+    const p = clamp01(progressRef.current);
 
     let targetPos: THREE.Vector3;
     let targetLookAt: THREE.Vector3;
