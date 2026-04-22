@@ -9,6 +9,7 @@ import Scene from "./scene/Scene";
 import HUD from "./hud/HUD";
 import ProgressBar from "./hud/ProgressBar";
 import DetailPanel from "./hud/DetailPanel";
+import QuickJump from "./hud/QuickJump";
 import { systems } from "./content";
 
 const GALAXY_END = 0.08;
@@ -46,6 +47,15 @@ export default function GalaxyApp() {
       <HUD progress={progress} onJumpToSystem={jumpToSystem} />
       <ProgressBar currentIndex={currentIndex} onJump={jumpToSystem} />
       <DetailPanel planetId={docking.dockedPlanetId} onClose={docking.undock} />
+      <QuickJump
+        onJumpToSystem={jumpToSystem}
+        onJumpToPlanet={(id) => {
+          const s = systems.find(sys => sys.planets.some(p => p.id === id));
+          if (!s) return;
+          jumpToSystem(s.id);
+          setTimeout(() => docking.dock(id), 600);
+        }}
+      />
     </>
   );
 }
