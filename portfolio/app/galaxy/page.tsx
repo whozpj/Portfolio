@@ -1,4 +1,6 @@
 import StackedLayout from "./fallback/StackedLayout";
+import GalaxyApp from "./GalaxyApp";
+import ClientHideOnHydrate from "./ClientHideOnHydrate";
 
 export const metadata = {
   title: "Prithvi Raj · Galaxy",
@@ -6,5 +8,12 @@ export const metadata = {
 };
 
 export default function GalaxyPage() {
-  return <StackedLayout />;
+  return (
+    <>
+      <ClientHideOnHydrate>
+        <StackedLayout />
+      </ClientHideOnHydrate>
+      <GalaxyApp />
+    </>
+  );
 }
