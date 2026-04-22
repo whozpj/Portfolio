@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 
-export function useScrollProgress(enabled: boolean): { progress: number; lenis: Lenis | null } {
+export function useScrollProgress(enabled: boolean): { progress: number } {
   const lenisRef = useRef<Lenis | null>(null);
   const [progress, setProgress] = useState(0);
 
@@ -32,5 +32,5 @@ export function useScrollProgress(enabled: boolean): { progress: number; lenis: 
     };
   }, [enabled]);
 
-  return { progress, lenis: lenisRef.current };
+  return { progress };
 }
