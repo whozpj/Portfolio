@@ -1,0 +1,32 @@
+import { describe, it, expect } from "vitest";
+import { systems } from "../../content";
+
+describe("content/index", () => {
+  it("has 5 systems in order", () => {
+    expect(systems.map(s => s.id)).toEqual(["about", "experience", "projects", "skills", "contact"]);
+  });
+
+  it("indexes are 0..4", () => {
+    systems.forEach((s, i) => expect(s.index).toBe(i));
+  });
+
+  it("every planet has a unique id within its system", () => {
+    for (const s of systems) {
+      const ids = s.planets.map(p => p.id);
+      expect(new Set(ids).size).toBe(ids.length);
+    }
+  });
+
+  it("every system has a non-empty title and accentHex", () => {
+    for (const s of systems) {
+      expect(s.title.length).toBeGreaterThan(0);
+      expect(s.accentHex).toMatch(/^#[0-9a-f]{6}$/i);
+    }
+  });
+
+  it("has at least one incoming status in experience (IBM comet)", () => {
+    const exp = systems.find(s => s.id === "experience")!;
+    const incoming = exp.planets.find(p => p.kind === "experience" && p.status === "incoming");
+    expect(incoming).toBeDefined();
+  });
+});
