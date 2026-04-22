@@ -1,3 +1,4 @@
+import "./galaxy.css";
 import StackedLayout from "./fallback/StackedLayout";
 import GalaxyApp from "./GalaxyApp";
 import ClientHideOnHydrate from "./ClientHideOnHydrate";

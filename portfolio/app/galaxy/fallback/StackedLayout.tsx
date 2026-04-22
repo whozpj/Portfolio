@@ -3,7 +3,7 @@ import { systems } from "../content";
 
 export default function StackedLayout() {
   return (
-    <div className="min-h-screen bg-[#030308] text-white selection:bg-white selection:text-black">
+    <div className="galaxy-root min-h-screen bg-[#030308] text-white selection:bg-white selection:text-black">
       <header className="pt-24 pb-16 text-center px-6">
         <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-neutral-500">
           The portfolio of
