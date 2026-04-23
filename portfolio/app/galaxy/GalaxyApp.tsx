@@ -11,8 +11,7 @@ import ProgressBar from "./hud/ProgressBar";
 import DetailPanel from "./hud/DetailPanel";
 import QuickJump from "./hud/QuickJump";
 import { systems } from "./content";
-
-const GALAXY_END = 0.08;
+import { systemIndexAt, progressForSystem } from "./lib/scroll";
 
 export default function GalaxyApp() {
   const webgl = useWebGLSupport();
@@ -22,21 +21,14 @@ export default function GalaxyApp() {
   const { progress, progressRef } = useScrollProgress(enabled);
   const docking = useDocking();
 
-  const currentIndex = useMemo(() => {
-    if (progress <= GALAXY_END) return 0;
-    const remaining = (progress - GALAXY_END) / (1 - GALAXY_END);
-    const N = systems.length - 1;
-    return Math.min(Math.floor(remaining * N), N);
-  }, [progress]);
+  const currentIndex = useMemo(() => systemIndexAt(progress), [progress]);
 
   const jumpToSystem = useCallback((id: string) => {
     const idx = systems.findIndex(s => s.id === id);
     if (idx === -1) return;
     const el = document.documentElement;
     const max = el.scrollHeight - el.clientHeight;
-    const N = systems.length - 1;
-    const target = GALAXY_END + (idx / N) * (1 - GALAXY_END);
-    window.scrollTo({ top: target * max, behavior: "smooth" });
+    window.scrollTo({ top: progressForSystem(idx) * max, behavior: "smooth" });
   }, []);
 
   if (!enabled) return null;
