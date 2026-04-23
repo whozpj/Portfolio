@@ -64,19 +64,23 @@ export default function Portfolio() {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["Python", "TypeScript", "Java", "JavaScript", "SQL", "R", "Assembly", "C"],
+      skills: ["Python", "Java", "TypeScript", "JavaScript", "Go", "SQL"],
     },
     {
       title: "Frameworks/Libraries",
-      skills: ["Django", "FastAPI", "React.js", "GraphQL", "Rest API", "NumPy", "Pandas", "Node.js" ],
+      skills: ["FastAPI", "Django", "React.js", "GraphQL", "RESTful APIs", "PostgreSQL", "Gradle", "JUnit", "Pytest"],
     },
     {
       title: "AI/ML",
-      skills: ["LangChain", "LangGraph", "PyTorch", "ChromaDB", "RAG Pipelines", "Agentic AI", "GPT-4", "Gemini", "Llama" ],
+      skills: ["LangChain", "LangGraph", "PyTorch", "ChromaDB", "NumPy", "Pandas", "RAG Pipelines", "Agentic AI", "Gemini", "GPT-4"],
     },
     {
-      title: "Infrastructure & DevOps",
-      skills: ["AWS", "GCP", "Azure", "Docker", "PostgreSQL", "CI/CD", "Git/GitHub", "Jira", "Confluence", "VSCode" ],
+      title: "Cloud & Infrastructure",
+      skills: ["AWS (RDS, EC2, ECS, S3, ALB)", "GCP", "Kubernetes", "Docker", "Terraform", "Heroku"],
+    },
+    {
+      title: "Developer Tools",
+      skills: ["Claude Code", "GitHub", "VSCode"],
     },
     {
       title: "Certifications",
@@ -168,10 +172,10 @@ export default function Portfolio() {
             <h2 className="text-xs uppercase tracking-[0.3em] text-neutral-600 mt-1">Background</h2>
             <div className="md:col-span-2 space-y-6 text-neutral-400 font-light leading-relaxed">
               <p>
-                Hello! I'm Prithvi, a Software Engineer with a passion for solving problems through AI and software. Currently, I am a Software Engineer at ManTech, focusing on modernizing legacy systems and implementing AI-driven solutions. I am also actively involved with Candlefish, where I apply machine learning techniques to real-world challenges.
+                Hello! I&apos;m Prithvi, a Software Engineer focused on applied AI and backend systems. I&apos;m currently at Candlefish — Machine Learning @UVA, shipping a PyTorch U-Net segmentation model. Before that, I spent a year at ManTech modernizing a legacy DoD platform into Django microservices on Google Kubernetes Engine. This summer I&apos;ll be joining Fannie Mae as a Software Engineering Intern, followed by IBM in Austin for the fall.
               </p>
               <p>
-                In my free time, I enjoy hitting the gym, hanging out with friends, exploring new technologies, and learning. I'm always eager to connect with like-minded individuals, so feel free to reach out! I am actively seeking internship opportunities for Summer and Fall 2026.
+                I study Computer Science at the University of Virginia (B.S. expected May 2028, GPA 3.84). In my free time, I enjoy the gym, hanging out with friends, exploring new tools, and building things like the galaxy portfolio you&apos;re looking at. Always happy to connect — feel free to reach out.
               </p>
             </div>
           </div>
@@ -184,63 +188,33 @@ export default function Portfolio() {
         <div className="space-y-12">
           {[
             {
-              date: "Incoming August 2026",
-              role: "Software Development Intern",
-              company: "IBM",
-              desc: (
-                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
-                   <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>Incoming August 2026
-                  </li>
-                </ul>
-              ),
-            },
-            // {
-            //   date: "Incoming June 2026",
-            //   role: "Software Engineering Intern",
-            //   company: "Fannie Mae",
-            //   desc: (
-            //     <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
-            //        <li className="flex gap-2">
-            //         <span className="text-neutral-700">—</span>Incoming June 2026
-            //       </li>
-            //     </ul>
-            //   ),
-            // },
-            
-            {
-              date: "2024 — Present",
-              role: "Software Development Intern",
-              company: "ManTech",
+              date: "Aug 2026 — Dec 2026",
+              role: "Software Development Intern · Incoming",
+              company: "IBM · Austin, TX",
               desc: (
                 <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                   <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-                    Migrating a legacy DoD system used at 100+ locations worldwide to a modern microservices architecture using Django, React, GCP, PostgreSQL, and AI.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-                    Built an AI query system using LangGraph and Gemini Flash that translates natural language into complex database searches, reducing query time from 3 minutes to 20 seconds.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-                    Built 4 Django microservices with GraphQL and PostgreSQL with resilient, monitored services.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-                    Created an AI pipeline using OCR and Gemini to process vehicle label images, cutting data entry time from 2+ hours to 10 minutes per batch.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-neutral-700">—</span>
-                    Developed React interfaces that streamlined workflows from 8 steps to 4, improving data-entry efficiency by 50%.
+                    <span className="text-neutral-700">—</span>Incoming August 2026.
                   </li>
                 </ul>
               ),
             },
             {
-              date: "November 2025 — Present",
+              date: "Jun 2026 — Aug 2026",
+              role: "Software Engineering Intern · Incoming",
+              company: "Fannie Mae · Reston, VA",
+              desc: (
+                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>Incoming June 2026.
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              date: "Nov 2025 — May 2026",
               role: "Software Engineer (Applied ML)",
-              company: "Candlefish",
+              company: "Candlefish — Machine Learning @UVA",
               desc: (
                 <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
                   <li className="flex gap-2">
@@ -254,24 +228,48 @@ export default function Portfolio() {
                 </ul>
               ),
             },
-
             {
-            date: "May 2024 — August 2024",
-            role: "Software Development Intern",
-            company: "MyEdMaster",
-            desc: (
-              <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
-                <li className="flex gap-2">
-                  <span className="text-neutral-700">—</span>
-                  Built a personalized AI tutoring system using LangChain, GPT-4, and ChromaDB that adapts to individual student learning styles for AP Calculus and algebra.
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-neutral-700">—</span>
-                  Created an automated pipeline using Selenium and BeautifulSoup to extract and structure educational content from web sources for AI-powered tutoring.
-                </li>
-              </ul>
-            ),
-          }
+              date: "May 2025 — April 2026",
+              role: "Software Development Intern",
+              company: "ManTech · Herndon, VA",
+              desc: (
+                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Built 4 Django microservices deployed on Google Kubernetes Engine, serving 1,000+ DoD users across 100+ worldwide locations with resilient, monitored services.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Built an AI query system using LangGraph and Gemini Flash that translates natural language into complex database searches, reducing query time from 90 seconds to 20 seconds.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Created an AI pipeline using OCR and Gemini to process 200+ vehicle label images per batch, cutting data-entry time from 2+ hours to 10 minutes.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Developed 5 React interfaces that streamlined workflows from 8 steps to 4, improving data-entry efficiency by 50%.
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              date: "May 2024 — Aug 2024",
+              role: "Software Development Intern",
+              company: "MyEdMaster",
+              desc: (
+                <ul className="space-y-2 mt-3 text-sm text-neutral-500 font-light">
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Built a personalized AI tutoring system using LangChain, GPT-4, and ChromaDB that adapts to individual student learning styles for AP Calculus and algebra.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-neutral-700">—</span>
+                    Created an automated pipeline using Selenium and BeautifulSoup to extract and structure educational content from web sources for AI-powered tutoring.
+                  </li>
+                </ul>
+              ),
+            },
           ].map((job, i) => (
             <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="group relative pl-8 border-l border-neutral-800 hover:border-neutral-500 transition-colors">
               <div className="absolute left-[-5px] top-1 h-2 w-2 rounded-full bg-neutral-800 group-hover:bg-white transition-colors" />
@@ -290,32 +288,23 @@ export default function Portfolio() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
+              title: "Argus",
+              desc: "A SaaS platform that detects statistically significant LLM performance regressions across model versions, giving teams automated confidence scores before production deploys.",
+              tags: ["Python", "Go", "Next.js", "FastAPI", "PostgreSQL", "AWS", "Terraform"],
+              github: "https://github.com/whozpj",
+              howItWorks: "A Python SDK (published to PyPI) wraps LLM calls and streams evaluation traces to the Argus backend. A Go evaluation service scores each run, while a FastAPI analytics service applies Mann-Whitney U tests to compare the current version's distribution against historical baselines, flagging regressions at 98% accuracy.",
+              design: "Full-stack cloud architecture on AWS: Terraform-provisioned ECS Fargate for containerized services, RDS PostgreSQL for persistence, an Application Load Balancer fronting the API, and CloudFront + S3 serving the Next.js dashboard. The SDK, Go evaluator, and Python analytics service are independently deployable.",
+              challenges: "Choosing a non-parametric statistical test (Mann-Whitney U) was critical — LLM score distributions are rarely normal, so Student's t-tests produce false positives. Calibrating the regression threshold across varied evaluation suites required synthetic benchmarking before launch.",
+            },
+            {
               title: "FeatherDB",
-              desc: "A lightweight, file-based relational database engine built from the ground up in Java. FeatherDB implements a custom SQL-like query language with a complete parser, query optimizer, and execution engine, using the file system for persistent data storage.",
-              tags: ["Java", "Maven", "JUnit"],
+              desc: "A lightweight, file-based relational database engine built from the ground up in Java, with a custom SQL-like query language, recursive descent parser, and B-tree-indexed storage.",
+              tags: ["Java", "Gradle", "JUnit"],
               github: "https://github.com/whozpj/featherdb",
-              howItWorks: "FeatherDB is built with a custom SQL parser that processes queries into an abstract syntax tree. The query optimizer analyzes the execution plan and selects the most efficient path. Data is stored in a custom file format with B-tree indexing for fast lookups. The execution engine processes SELECT, INSERT, UPDATE, and DELETE operations with transaction support.",
-              design: "The architecture follows a layered design pattern: Parser Layer → Optimizer → Execution Engine → Storage Layer. Each layer is modular and testable. The file system acts as the persistent storage, with each table stored as a separate file. Indexes are maintained in memory and periodically flushed to disk.",
-              challenges: "Implementing a robust query parser that handles complex SQL syntax was challenging. Ensuring data consistency during concurrent operations required careful transaction management. Optimizing query performance without a traditional database cache required innovative indexing strategies.",
+              howItWorks: "A recursive descent parser converts SQL-like input into an abstract syntax tree, which a polymorphic command dispatcher routes across 8 operations (SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, and more). Data is persisted in a custom file format and indexed with B-trees for O(log n) lookups.",
+              design: "Layered architecture: Parser → Command Dispatcher (polymorphic per operation) → Execution Engine → Storage Layer. Each table lives in its own file; B-tree indices are memory-resident and periodically flushed. 104 JUnit tests exercise the engine across 1K–100K-row datasets to validate correctness and performance.",
+              challenges: "Implementing a recursive descent parser that handled precedence, nesting, and error recovery cleanly was the hardest piece. Maintaining O(log n) guarantees under inserts and deletes required careful B-tree rebalancing. Writing 104 tests forced meticulous boundary-condition reasoning across dataset sizes.",
             },
-            {
-              title: "GitGuard",
-              desc: "Multi-agent AI-powered code analysis platform that automatically reviews GitHub repositories to identify security vulnerabilities, optimize performance, and generate documentation using LLMs.",
-              tags: ["LangChain", "Llama 3.1", "FastAPI", "Python", "PostgreSQL", "Pinecone", "Docker", "Heroku"],
-              howItWorks: "GitGuard uses LangChain to orchestrate three specialized agents—security scanning, performance optimization, and documentation generation—powered by Llama 3.1 via the Groq API. A RAG pipeline with Pinecone vector embeddings provides context-aware suggestions by retrieving relevant code snippets. GitHub webhooks trigger analysis on pull requests, and results are stored in PostgreSQL.",
-              design: "The system follows a microservices-style architecture with FastAPI as the backend, PostgreSQL for persistent storage, and Pinecone for semantic search. GitHub API integrations handle repository access and webhook events. The application is containerized with Docker and deployed on Heroku for scalability and reliability.",
-              challenges: "Designing effective agent specialization required careful prompt engineering. Achieving high accuracy in detecting SQL injection vulnerabilities involved tuning retrieval and evaluation logic. Managing webhook concurrency and ensuring low-latency responses under load were key deployment challenges.",
-            },
-            {
-              title: "MLB Pitcher Injury Predictor",
-              desc: "A real-time injury monitoring system for MLB pitchers that analyzes pitch sequences to predict potential injuries before they occur.",
-              tags: ["Python", "PyTorch", "FastAPI", "React", "PostgreSQL", "MLB Statcast", "AWS"],
-              howItWorks: "Continuously monitors MLB pitchers by analyzing their pitch velocity, spin rate, and release mechanics from every game. The system detects subtle biomechanical changes that often precede injuries, providing early warnings 2-3 starts before problems occur."    ,
-              design: "An ETL pipeline ingests real-time pitch data from MLB Statcast API, preprocessing 200K+ sequences into time-series features. An LSTM autoencoder learns normal pitching patterns and flags anomalies indicating injury risk. The FastAPI backend serves predictions stored in PostgreSQL (RDS), with model artifacts on S3 and the React dashboard deployed on AWS EC2."
-        }
-            
-
-
           ].map((project, i) => (
             <motion.div 
               key={i} 
@@ -407,9 +396,9 @@ export default function Portfolio() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
-              title: "Personal AI Portfolio Enhancements",
-              desc: "Building new features for this portfolio, including a smarter AI chatbot, real-time project updates, and interactive UI elements.",
-              tags: ["Next.js", "TypeScript", "OpenAI", "Framer Motion"],
+              title: "Galaxy Portfolio (this site)",
+              desc: "An interactive WebGL portfolio rendering my work as a navigable galaxy — stars for each section, orbiting planets for roles, projects, and skills, with Playwright-verified scroll choreography.",
+              tags: ["Next.js", "React Three Fiber", "TypeScript", "Tailwind"],
               status: "In Progress",
             },
             {
@@ -418,12 +407,6 @@ export default function Portfolio() {
               tags: ["Python (FastAPI)", "FFmpeg", "Redis", "PostgreSQL", "WebSockets", "Docker"],
               status: "In Progress",
             },
-            {
-              title: "Animal Behavior Recognition System",
-              desc: "A computer vision system that detects, counts, and tracks animals in images and videos while classifying their poses to identify and monitor behaviors over time.",
-              tags: ["Python", "OpenCV", "PyTorch"],
-              status: "In Progress",
-            }
           ].map((work, i) => (
             <motion.div 
               key={i} 

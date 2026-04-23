@@ -6,15 +6,17 @@ import Starfield from "./Starfield";
 import Nebula from "./Nebula";
 import SolarSystem from "./SolarSystem";
 import Galaxy from "./Galaxy";
+import ShootingStars from "./ShootingStars";
 import { systems } from "../content";
 import { systemPositions } from "../lib/systems";
 
 interface Props {
   progressRef: React.MutableRefObject<number>;
   onPlanetClick?: (planetId: string) => void;
+  onStarClick?: (systemId: string) => void;
 }
 
-export default function Scene({ progressRef, onPlanetClick }: Props) {
+export default function Scene({ progressRef, onPlanetClick, onStarClick }: Props) {
   return (
     <Canvas
       className="!fixed inset-0"
@@ -26,6 +28,7 @@ export default function Scene({ progressRef, onPlanetClick }: Props) {
       <pointLight position={[0, 0, 30]} intensity={0.4} color="#ffffff" />
 
       <Starfield />
+      <ShootingStars />
 
       {systems.map(s => {
         const [x, y, z] = systemPositions[s.id];
@@ -34,7 +37,7 @@ export default function Scene({ progressRef, onPlanetClick }: Props) {
 
       <Galaxy />
       {systems.map(s => (
-        <SolarSystem key={s.id} system={s} onPlanetClick={onPlanetClick} />
+        <SolarSystem key={s.id} system={s} onPlanetClick={onPlanetClick} onStarClick={onStarClick} />
       ))}
 
       <CameraRig progressRef={progressRef} />

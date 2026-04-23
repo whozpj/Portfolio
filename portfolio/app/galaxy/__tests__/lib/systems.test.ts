@@ -20,7 +20,7 @@ describe("lib/systems", () => {
   });
 
   it("systemRadius returns positive number", () => {
-    expect(systemRadius("experience")).toBeGreaterThan(0);
+    expect(systemRadius()).toBeGreaterThan(0);
   });
 
   it("systemAccent resolves all five systems to hex", () => {

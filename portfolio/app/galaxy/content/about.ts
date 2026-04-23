@@ -7,10 +7,10 @@ export const aboutSystem: System = {
   subtitle: "Who · What · Where",
   accent: "white",
   accentHex: "#ffffff",
-  bio: "Software Engineer focused on AI and software. Currently at ManTech modernizing legacy systems and at Candlefish applying ML to real-world problems. Actively seeking internship opportunities for Summer and Fall 2026.",
+  bio: "Software Engineer focused on applied AI and backend systems. CS @ UVA (B.S. May 2028, GPA 3.84). Currently at Candlefish shipping a U-Net segmentation model; recently at ManTech modernizing a legacy DoD platform. Incoming SWE at Fannie Mae (Summer 2026) and IBM (Fall 2026).",
   planets: [
-    { id: "loc", kind: "aboutFact", label: "CS · UVA", orbit: "inner", text: "Computer Science @ University of Virginia" },
-    { id: "focus", kind: "aboutFact", label: "Focus", orbit: "inner", text: "Applied AI / software engineering" },
-    { id: "status", kind: "aboutFact", label: "Open", orbit: "mid", text: "Seeking Summer & Fall 2026 internships" },
+    { id: "loc", kind: "aboutFact", label: "CS · UVA", orbit: "inner", text: "Computer Science @ University of Virginia — B.S. May 2028, GPA 3.84" },
+    { id: "focus", kind: "aboutFact", label: "Focus", orbit: "inner", text: "Applied AI · backend systems · ML engineering" },
+    { id: "status", kind: "aboutFact", label: "Next", orbit: "mid", text: "Incoming SWE @ Fannie Mae (Summer 2026) and IBM (Fall 2026)" },
   ],
 };

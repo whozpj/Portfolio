@@ -11,6 +11,7 @@ import Comet from "./Comet";
 import Beacon from "./Beacon";
 import IntroHalo from "./IntroHalo";
 import SkillNebula from "./SkillNebula";
+import OrbitPath from "./OrbitPath";
 
 const ORBIT_RADIUS = { inner: 3.5, mid: 6, outer: 9, comet: 12 } as const;
 
@@ -58,12 +59,40 @@ const starVariant = (id: string): StarVariant => {
   return "sun";
 };
 
+// Parse a dateRange like "Nov 2025 — Present" or "2024 — Present" into a numeric rank
+// (higher = more recent). Handles month-year and year-only forms; returns 0 if unparseable.
+const MONTHS: Record<string, number> = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+};
+const rankStart = (dateRange: string): number => {
+  const m = dateRange.match(/([A-Za-z]{3,})?\s*(\d{4})/);
+  if (!m) return 0;
+  const monthKey = (m[1] ?? "").slice(0, 3).toLowerCase();
+  const month = MONTHS[monthKey] ?? 1;
+  const year = parseInt(m[2], 10);
+  return year * 12 + month;
+};
+
+// Featured = the currently-active experience with the most recent start.
+const pickFeaturedId = (planets: Planet[]): string | null => {
+  let bestId: string | null = null;
+  let bestRank = -1;
+  for (const p of planets) {
+    if (p.kind !== "experience" || p.status !== "active") continue;
+    const r = rankStart(p.dateRange);
+    if (r > bestRank) { bestRank = r; bestId = p.id; }
+  }
+  return bestId;
+};
+
 interface Props {
   system: System;
   onPlanetClick?: (planetId: string) => void;
+  onStarClick?: (systemId: string) => void;
 }
 
-export default function SolarSystem({ system, onPlanetClick }: Props) {
+export default function SolarSystem({ system, onPlanetClick, onStarClick }: Props) {
   const center = systemPositions[system.id];
 
   const bodies = useMemo(() => {
@@ -80,12 +109,30 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
     });
   }, [system]);
 
-  // About: atmospheric intro halo, no orbiting planets
+  const orbitRadii = useMemo(() => {
+    const radii = new Set<number>();
+    for (const p of system.planets) {
+      if (p.orbit !== "comet") radii.add(ORBIT_RADIUS[p.orbit]);
+    }
+    return Array.from(radii);
+  }, [system]);
+
+  const featuredId = useMemo(
+    () => (system.id === "experience" ? pickFeaturedId(system.planets) : null),
+    [system],
+  );
+
+  // About: atmospheric intro halo, no orbiting planets — star is clickable (opens résumé)
   if (system.id === "about") {
     return (
       <group>
-        <Star position={center} color={system.accentHex} size={0.65} />
-        <IntroHalo center={center} bio={system.bio} />
+        <Star
+          position={center}
+          color={system.accentHex}
+          size={0.65}
+          onClick={onStarClick ? () => onStarClick(system.id) : undefined}
+        />
+        <IntroHalo />
       </group>
     );
   }
@@ -103,6 +150,9 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
   return (
     <group>
       <Star position={center} color={system.accentHex} size={0.9} variant={starVariant(system.id)} />
+      {orbitRadii.map(r => (
+        <OrbitPath key={r} center={center} radius={r} color={system.accentHex} />
+      ))}
       {bodies.map(({ planet, phase, color, radius, speed, size, shape, label, sublabel }) => {
         if (planet.orbit === "comet") {
           return (
@@ -144,6 +194,7 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
             shape={shape}
             label={label}
             sublabel={sublabel}
+            featured={planet.id === featuredId}
             onClick={() => onPlanetClick?.(planet.id)}
           />
         );
