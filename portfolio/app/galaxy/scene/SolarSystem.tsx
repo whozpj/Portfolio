@@ -4,7 +4,9 @@ import { useMemo } from "react";
 import type { System, Planet, SkillCluster } from "../content/types";
 import { systemPositions } from "../lib/systems";
 import Star from "./Star";
+import type { StarVariant } from "./Star";
 import PlanetMesh from "./Planet";
+import type { PlanetShape } from "./Planet";
 import Comet from "./Comet";
 import Beacon from "./Beacon";
 import IntroHalo from "./IntroHalo";
@@ -27,7 +29,13 @@ const planetSize = (p: Planet): number => {
   return 0.48;
 };
 
-// What to show as the floating label for each planet kind
+// Shape communicates planet type at a glance
+const planetShape = (p: Planet): PlanetShape => {
+  if (p.kind === "experience") return "octahedron";  // gem = career value
+  if (p.kind === "project")    return "icosahedron"; // polyhedron = technical work
+  return "sphere";
+};
+
 const planetLabel = (p: Planet): { label: string; sublabel?: string } => {
   switch (p.kind) {
     case "experience":
@@ -41,6 +49,13 @@ const planetLabel = (p: Planet): { label: string; sublabel?: string } => {
     case "beacon":
       return { label: p.label };
   }
+};
+
+// Star variant per system
+const starVariant = (id: string): StarVariant => {
+  if (id === "experience") return "ringed";  // career hub with orbiting rings
+  if (id === "projects")   return "cage";    // technical hub with wireframe cage
+  return "sun";
 };
 
 interface Props {
@@ -59,8 +74,9 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
       const radius = ORBIT_RADIUS[p.orbit];
       const speed = ORBIT_SPEED[p.orbit];
       const size = planetSize(p);
+      const shape = planetShape(p);
       const { label, sublabel } = planetLabel(p);
-      return { planet: p, phase, color, radius, speed, size, label, sublabel };
+      return { planet: p, phase, color, radius, speed, size, shape, label, sublabel };
     });
   }, [system]);
 
@@ -79,7 +95,6 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
     const clusters = system.planets.filter((p): p is SkillCluster => p.kind === "skillCluster");
     return (
       <group>
-        <Star position={center} color={system.accentHex} size={1.4} />
         <SkillNebula center={center} clusters={clusters} />
       </group>
     );
@@ -87,8 +102,8 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
 
   return (
     <group>
-      <Star position={center} color={system.accentHex} size={1.4} />
-      {bodies.map(({ planet, phase, color, radius, speed, size, label, sublabel }) => {
+      <Star position={center} color={system.accentHex} size={0.9} variant={starVariant(system.id)} />
+      {bodies.map(({ planet, phase, color, radius, speed, size, shape, label, sublabel }) => {
         if (planet.orbit === "comet") {
           return (
             <Comet
@@ -126,6 +141,7 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
             initialPhase={phase}
             color={color}
             size={size}
+            shape={shape}
             label={label}
             sublabel={sublabel}
             onClick={() => onPlanetClick?.(planet.id)}
