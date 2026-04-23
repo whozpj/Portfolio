@@ -1,15 +1,45 @@
 "use client";
 
 import { useMemo } from "react";
-import type { System } from "../content/types";
+import type { System, Planet } from "../content/types";
 import { systemPositions } from "../lib/systems";
 import Star from "./Star";
-import Planet from "./Planet";
+import PlanetMesh from "./Planet";
 import Comet from "./Comet";
 import Beacon from "./Beacon";
 
 const ORBIT_RADIUS = { inner: 3.5, mid: 6, outer: 9, comet: 12 } as const;
-const ORBIT_SPEED = { inner: 0.35, mid: 0.18, outer: 0.09, comet: 0.06 } as const;
+
+// Active roles orbit faster (most recent = most alive); past roles drift slowly
+const ORBIT_SPEED = { inner: 0.35, mid: 0.14, outer: 0.07, comet: 0.06 } as const;
+
+// Visual size encodes status: active > past > other
+const planetSize = (p: Planet): number => {
+  if (p.kind === "experience") {
+    if (p.status === "active") return 0.75;
+    if (p.status === "past")   return 0.45;
+    return 0.55; // incoming
+  }
+  if (p.orbit === "inner") return 0.6;
+  if (p.orbit === "outer") return 0.38;
+  return 0.48;
+};
+
+// What to show as the floating label for each planet kind
+const planetLabel = (p: Planet): { label: string; sublabel?: string } => {
+  switch (p.kind) {
+    case "experience":
+      return { label: p.company, sublabel: p.dateRange };
+    case "project":
+      return { label: p.name };
+    case "skillCluster":
+      return { label: p.title };
+    case "aboutFact":
+      return { label: p.label };
+    case "beacon":
+      return { label: p.label };
+  }
+};
 
 interface Props {
   system: System;
@@ -26,14 +56,16 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
       const color = p.accent ?? system.accentHex;
       const radius = ORBIT_RADIUS[p.orbit];
       const speed = ORBIT_SPEED[p.orbit];
-      return { planet: p, phase, color, radius, speed };
+      const size = planetSize(p);
+      const { label, sublabel } = planetLabel(p);
+      return { planet: p, phase, color, radius, speed, size, label, sublabel };
     });
   }, [system]);
 
   return (
     <group>
       <Star position={center} color={system.accentHex} size={system.id === "about" ? 1.8 : 1.4} />
-      {bodies.map(({ planet, phase, color, radius, speed }) => {
+      {bodies.map(({ planet, phase, color, radius, speed, size, label, sublabel }) => {
         if (planet.orbit === "comet") {
           return (
             <Comet
@@ -44,6 +76,8 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
               orbitSpeed={speed}
               initialPhase={phase}
               color={color}
+              label={label}
+              sublabel={sublabel}
               onClick={() => onPlanetClick?.(planet.id)}
             />
           );
@@ -61,14 +95,16 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
           );
         }
         return (
-          <Planet
+          <PlanetMesh
             key={planet.id}
             center={center}
             orbitRadius={radius}
             orbitSpeed={speed}
             initialPhase={phase}
             color={color}
-            size={planet.orbit === "inner" ? 0.6 : 0.45}
+            size={size}
+            label={label}
+            sublabel={sublabel}
             onClick={() => onPlanetClick?.(planet.id)}
           />
         );
