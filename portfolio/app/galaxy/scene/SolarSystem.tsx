@@ -1,12 +1,14 @@
 "use client";
 
 import { useMemo } from "react";
-import type { System, Planet } from "../content/types";
+import type { System, Planet, SkillCluster } from "../content/types";
 import { systemPositions } from "../lib/systems";
 import Star from "./Star";
 import PlanetMesh from "./Planet";
 import Comet from "./Comet";
 import Beacon from "./Beacon";
+import IntroHalo from "./IntroHalo";
+import SkillNebula from "./SkillNebula";
 
 const ORBIT_RADIUS = { inner: 3.5, mid: 6, outer: 9, comet: 12 } as const;
 
@@ -62,9 +64,30 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
     });
   }, [system]);
 
+  // About: atmospheric intro halo, no orbiting planets
+  if (system.id === "about") {
+    return (
+      <group>
+        <Star position={center} color={system.accentHex} size={2.2} />
+        <IntroHalo center={center} bio={system.bio} />
+      </group>
+    );
+  }
+
+  // Skills: rotating word-cloud nebula instead of planets
+  if (system.id === "skills") {
+    const clusters = system.planets.filter((p): p is SkillCluster => p.kind === "skillCluster");
+    return (
+      <group>
+        <Star position={center} color={system.accentHex} size={1.4} />
+        <SkillNebula center={center} clusters={clusters} accentHex={system.accentHex} />
+      </group>
+    );
+  }
+
   return (
     <group>
-      <Star position={center} color={system.accentHex} size={system.id === "about" ? 1.8 : 1.4} />
+      <Star position={center} color={system.accentHex} size={1.4} />
       {bodies.map(({ planet, phase, color, radius, speed, size, label, sublabel }) => {
         if (planet.orbit === "comet") {
           return (
