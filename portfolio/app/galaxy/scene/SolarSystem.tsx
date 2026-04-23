@@ -68,7 +68,7 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
   if (system.id === "about") {
     return (
       <group>
-        <Star position={center} color={system.accentHex} size={2.2} />
+        <Star position={center} color={system.accentHex} size={0.65} />
         <IntroHalo center={center} bio={system.bio} />
       </group>
     );
@@ -80,7 +80,7 @@ export default function SolarSystem({ system, onPlanetClick }: Props) {
     return (
       <group>
         <Star position={center} color={system.accentHex} size={1.4} />
-        <SkillNebula center={center} clusters={clusters} accentHex={system.accentHex} />
+        <SkillNebula center={center} clusters={clusters} />
       </group>
     );
   }
