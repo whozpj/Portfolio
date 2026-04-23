@@ -77,8 +77,7 @@ export default function HUD({ progress, systemIndex, onJumpToSystem, onOpenResum
 
         {/* Tagline */}
         <p className="mt-6 max-w-xl px-6 text-center text-sm md:text-base font-light leading-relaxed text-neutral-400">
-          Shipping AI systems in production — from a LangGraph query engine cutting DoD search times
-          20× to a PyTorch U-Net segmenting architectural blueprints at 0.89 mIoU.
+          Shipping AI systems in production.
         </p>
 
         {/* CTAs */}
