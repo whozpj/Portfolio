@@ -14,7 +14,7 @@ interface Props {
 
 const LERP_FACTOR = 0.06;
 // How far above and in front of each system center the camera sits
-const CAM_OFFSET = new THREE.Vector3(0, 4, 20);
+const CAM_OFFSET = new THREE.Vector3(0, 3, 14);
 
 // Pre-allocated — avoid GC churn in useFrame
 const _tgt = new THREE.Vector3();
@@ -33,7 +33,7 @@ export default function CameraRig({ progressRef }: Props) {
     if (p <= GALAXY_END) {
       // Fly in from galaxy overview to About system
       const t = easeInOutCubic(p / GALAXY_END);
-      _a.set(0, 8, 40);
+      _a.set(0, 10, 50);
       _b.set(...systemPositions.about).add(CAM_OFFSET);
       _tgt.lerpVectors(_a, _b, t);
       _a.set(0, 0, -120);
