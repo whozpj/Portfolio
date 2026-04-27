@@ -7,7 +7,7 @@ const clusters = (skillsSystem.planets as SkillCluster[]).filter(
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-8 py-10 max-w-5xl mx-auto">
+    <section id="skills" className="px-8 py-10 px-16">
       <div className="h-px bg-[#1a1a1a] mb-8" />
       <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-5">
         SKILLS

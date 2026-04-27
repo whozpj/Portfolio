@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="pt-24 pb-10 px-8 max-w-5xl mx-auto">
+    <section className="pt-24 pb-10 px-8 px-16">
       <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-4">
         SOFTWARE ENGINEER · APPLIED AI · UVA
       </p>
