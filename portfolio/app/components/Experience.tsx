@@ -25,14 +25,17 @@ export default function Experience() {
             <div
               key={exp.id}
               data-role="exp-row"
-              onClick={() => setOpenId(isOpen ? "" : exp.id)}
-              className={`rounded-md border cursor-pointer transition-all duration-150 ${
+              className={`rounded-md border transition-all duration-150 ${
                 isOpen
                   ? "border-[#e6394655] bg-[#0d0d0d]"
                   : "border-transparent hover:border-[#e6394633] hover:bg-[#0d0d0d]"
               }`}
             >
-              <div className="flex items-center justify-between px-5 py-4 gap-4">
+              <button
+                onClick={() => setOpenId(isOpen ? "" : exp.id)}
+                aria-expanded={isOpen}
+                className="w-full flex items-center justify-between px-5 py-4 gap-4 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#e63946]"
+              >
                 <div className="flex items-center gap-4">
                   <div
                     className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
@@ -53,6 +56,7 @@ export default function Experience() {
                     {exp.dateRange}
                   </span>
                   <span
+                    aria-hidden="true"
                     className={`font-mono text-sm transition-transform duration-200 ${
                       isOpen ? "rotate-90 text-[#e63946]" : "text-[#2a2a2a]"
                     }`}
@@ -60,7 +64,7 @@ export default function Experience() {
                     ›
                   </span>
                 </div>
-              </div>
+              </button>
 
               {isOpen && (
                 <div className="px-5 pb-5 pl-[52px] border-t border-[#1a1a1a]">

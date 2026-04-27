@@ -17,15 +17,17 @@ describe("Experience accordion", () => {
 
   it("clicking a collapsed row shows its bullets", () => {
     render(<Experience />);
-    const candlefish = screen.getByText("Candlefish").closest("[data-role='exp-row']")!;
-    fireEvent.click(candlefish);
+    const candlefish = screen.getByText("Candlefish").closest("[data-role='exp-row']");
+    expect(candlefish).not.toBeNull();
+    fireEvent.click(candlefish!.querySelector("button")!);
     expect(screen.getByText(/200\+ hour manual labeling/)).toBeInTheDocument();
   });
 
   it("clicking an open row hides its bullets", () => {
     render(<Experience />);
-    const mantech = screen.getByText("ManTech").closest("[data-role='exp-row']")!;
-    fireEvent.click(mantech);
+    const mantech = screen.getByText("ManTech").closest("[data-role='exp-row']");
+    expect(mantech).not.toBeNull();
+    fireEvent.click(mantech!.querySelector("button")!);
     expect(screen.queryByText(/Built 4 prod Django/)).not.toBeInTheDocument();
   });
 });
