@@ -15,14 +15,14 @@ export default function Skills() {
       <div className="flex flex-col gap-4">
         {clusters.map((c) => (
           <div key={c.id} className="grid grid-cols-[180px_1fr] gap-4 items-start">
-            <span className="font-mono text-[10px] tracking-[2px] text-[#333] pt-1">
+            <span className="font-mono text-[10px] tracking-[2px] text-[#666] pt-1">
               {c.title}
             </span>
             <div className="flex flex-wrap gap-2">
               {c.items.map((item) => (
                 <span
                   key={item}
-                  className="font-mono text-[9px] tracking-[1px] border border-[#1f1f1f] rounded-sm px-2 py-1 text-[#444]"
+                  className="font-mono text-[9px] tracking-[1px] border border-[#2a2a2a] rounded-sm px-2 py-1 text-[#777]"
                 >
                   {item}
                 </span>

@@ -1,5 +1,6 @@
 import { projectsSystem } from "../galaxy/content";
 import type { ProjectPlanet } from "../galaxy/content/types";
+import { highlight } from "../lib/highlight";
 
 const projects = (projectsSystem.planets as ProjectPlanet[]).filter(
   (p) => p.kind === "project"
@@ -19,11 +20,11 @@ export default function Projects() {
             className="bg-black rounded-lg p-6 border border-[#1a1a1a] hover:border-[#e6394644] hover:shadow-[0_0_20px_#e6394611] transition-all duration-200"
           >
             <h3 className="text-xl font-black text-white">{p.name}</h3>
-            <p className="font-mono text-[9px] tracking-[2px] text-[#333] mt-1.5">
+            <p className="font-mono text-[9px] tracking-[2px] text-[#555] mt-1.5">
               {p.tags.join(" · ")}
             </p>
-            <p className="text-sm text-[#444] font-light leading-relaxed mt-3">
-              {p.description}
+            <p className="text-sm text-[#888] font-light leading-relaxed mt-3">
+              {highlight(p.description)}
             </p>
             {p.github ? (
               <a

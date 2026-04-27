@@ -12,7 +12,7 @@ export default function Hero() {
           Prithvi<br />
           <span className="text-[#e63946]">Raj.</span>
         </h1>
-        <p className="mt-5 text-[15px] text-[#444] font-light leading-relaxed max-w-md">
+        <p className="mt-5 text-[15px] text-[#888] font-light leading-relaxed max-w-md">
           I build AI systems that ship — LLM pipelines, agentic workflows, and the infrastructure to run them reliably.
         </p>
         <div className="flex items-center gap-6 mt-8">

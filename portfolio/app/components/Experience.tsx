@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { experienceSystem } from "../galaxy/content";
 import type { ExperiencePlanet } from "../galaxy/content/types";
+import { highlight } from "../lib/highlight";
 
 const experiences = (experienceSystem.planets as ExperiencePlanet[]).filter(
   (p) => p.kind === "experience"
@@ -49,16 +50,16 @@ export default function Experience() {
                   >
                     {exp.company.split(" ")[0]}
                   </span>
-                  <span className="text-sm text-[#555] font-light">{exp.role}</span>
+                  <span className="text-sm text-[#777] font-light">{exp.role}</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-[10px] tracking-[1px] text-[#2a2a2a] whitespace-nowrap">
+                  <span className="font-mono text-[10px] tracking-[1px] text-[#555] whitespace-nowrap">
                     {exp.dateRange}
                   </span>
                   <span
                     aria-hidden="true"
                     className={`font-mono text-sm transition-transform duration-200 ${
-                      isOpen ? "rotate-90 text-[#e63946]" : "text-[#2a2a2a]"
+                      isOpen ? "rotate-90 text-[#e63946]" : "text-[#555]"
                     }`}
                   >
                     ›
@@ -70,9 +71,9 @@ export default function Experience() {
                 <div className="px-5 pb-5 pl-[52px] border-t border-[#1a1a1a]">
                   <ul className="mt-4 flex flex-col gap-2">
                     {exp.bullets.map((b, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-[#555] font-light leading-relaxed">
-                        <span className="text-[#e6394666] flex-shrink-0">—</span>
-                        <span>{b}</span>
+                      <li key={i} className="flex gap-3 text-sm text-[#888] font-light leading-relaxed">
+                        <span className="text-[#e6394688] flex-shrink-0">—</span>
+                        <span>{highlight(b)}</span>
                       </li>
                     ))}
                   </ul>
