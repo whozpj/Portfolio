@@ -51,6 +51,8 @@ export default function ResumeSummary({ open, onClose }: Props) {
       aria-modal="true"
       aria-labelledby="resume-title"
       onClick={onClose}
+      onWheel={e => e.stopPropagation()}
+      onTouchMove={e => e.stopPropagation()}
     >
       <div
         className="relative w-full max-w-3xl rounded-sm border border-neutral-800 bg-[#0a0a12]/95 shadow-2xl"
