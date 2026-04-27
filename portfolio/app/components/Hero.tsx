@@ -21,7 +21,7 @@ export default function Hero() {
         <a
           href="/resume.pdf"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="font-mono text-[10px] tracking-[2px] text-[#333] hover:text-[#e63946] transition-colors"
         >
           RESUME ↗
