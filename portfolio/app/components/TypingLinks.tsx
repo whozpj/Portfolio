@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const LINKS = [
   { label: "github.com/whozpj", href: "https://github.com/whozpj" },
-  { label: "linkedin.com/in/prithvi-raj-7015a0250", href: "https://www.linkedin.com/in/prithvi-raj-7015a0250/" },
+  { label: "linkedin.com/in/prithvi-raj-whozpj", href: "https://www.linkedin.com/in/prithvi-raj-whozpj/" },
   { label: "pypi.org/project/argus-sdk", href: "https://pypi.org/project/argus-sdk/" },
   { label: "wyp9mq@virginia.edu", href: "mailto:wyp9mq@virginia.edu" },
 ];
