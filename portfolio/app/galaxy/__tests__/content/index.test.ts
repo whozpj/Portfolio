@@ -24,9 +24,9 @@ describe("content/index", () => {
     }
   });
 
-  it("has at least one incoming status in experience (IBM comet)", () => {
+  it("has at least one active status in experience", () => {
     const exp = systems.find(s => s.id === "experience")!;
-    const incoming = exp.planets.find(p => p.kind === "experience" && p.status === "incoming");
-    expect(incoming).toBeDefined();
+    const active = exp.planets.find(p => p.kind === "experience" && p.status === "active");
+    expect(active).toBeDefined();
   });
 });

@@ -12,7 +12,7 @@ describe("Experience accordion", () => {
 
   it("ManTech bullets are visible by default", () => {
     render(<Experience />);
-    expect(screen.getByText(/Built 4 prod Django/)).toBeInTheDocument();
+    expect(screen.getByText(/automated failover/)).toBeInTheDocument();
   });
 
   it("clicking a collapsed row shows its bullets", () => {
@@ -28,6 +28,6 @@ describe("Experience accordion", () => {
     const mantech = screen.getByText("ManTech").closest("[data-role='exp-row']");
     expect(mantech).not.toBeNull();
     fireEvent.click(mantech!.querySelector("button")!);
-    expect(screen.queryByText(/Built 4 prod Django/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/automated failover/)).not.toBeInTheDocument();
   });
 });
