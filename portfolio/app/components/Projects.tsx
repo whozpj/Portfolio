@@ -7,12 +7,12 @@ const projects = (projectsSystem.planets as ProjectPlanet[]).filter(
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-8 py-20 max-w-4xl mx-auto">
-      <div className="h-px bg-[#1a1a1a] mb-12" />
-      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-6">
+    <section id="projects" className="px-8 py-10 max-w-5xl mx-auto">
+      <div className="h-px bg-[#1a1a1a] mb-8" />
+      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-4">
         PROJECTS
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((p) => (
           <div
             key={p.id}

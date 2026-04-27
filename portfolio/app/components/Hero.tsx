@@ -1,10 +1,10 @@
 export default function Hero() {
   return (
-    <section className="pt-40 pb-20 px-8 max-w-4xl mx-auto">
+    <section className="pt-24 pb-10 px-8 max-w-5xl mx-auto">
       <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-4">
         SOFTWARE ENGINEER · APPLIED AI · UVA
       </p>
-      <h1 className="text-[72px] font-black leading-none tracking-[-3px] text-white">
+      <h1 className="text-[80px] font-black leading-none tracking-[-3px] text-white">
         Prithvi<br />
         <span className="text-[#e63946]">Raj.</span>
       </h1>

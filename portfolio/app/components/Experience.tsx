@@ -12,9 +12,9 @@ export default function Experience() {
   const [openId, setOpenId] = useState<string>("mantech");
 
   return (
-    <section id="experience" className="px-8 py-20 max-w-4xl mx-auto">
-      <div className="h-px bg-[#1a1a1a] mb-12" />
-      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-6">
+    <section id="experience" className="px-8 py-10 max-w-5xl mx-auto">
+      <div className="h-px bg-[#1a1a1a] mb-8" />
+      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-4">
         EXPERIENCE
       </p>
       <div className="flex flex-col gap-1">

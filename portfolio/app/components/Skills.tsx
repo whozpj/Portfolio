@@ -7,12 +7,12 @@ const clusters = (skillsSystem.planets as SkillCluster[]).filter(
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-8 py-20 max-w-4xl mx-auto">
-      <div className="h-px bg-[#1a1a1a] mb-12" />
-      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-8">
+    <section id="skills" className="px-8 py-10 max-w-5xl mx-auto">
+      <div className="h-px bg-[#1a1a1a] mb-8" />
+      <p className="font-mono text-[10px] tracking-[4px] text-[#e63946] mb-5">
         SKILLS
       </p>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         {clusters.map((c) => (
           <div key={c.id} className="grid grid-cols-[180px_1fr] gap-4 items-start">
             <span className="font-mono text-[10px] tracking-[2px] text-[#333] pt-1">
