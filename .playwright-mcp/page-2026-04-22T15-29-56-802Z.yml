@@ -1,0 +1,251 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - banner:
+        - paragraph: The portfolio of
+        - heading [level=1]: Prithvi Raj
+        - paragraph: CS · UVA · SWE & Applied AI
+      - region:
+        - generic:
+          - paragraph: System · 01 of 05
+          - heading [level=2]: About
+          - paragraph: Who · What · Where
+          - paragraph: Software Engineer focused on AI and software. Currently at ManTech modernizing legacy systems and at Candlefish applying ML to real-world problems. Actively seeking internship opportunities for Summer and Fall 2026.
+        - generic:
+          - generic:
+            - generic:
+              - paragraph: CS · UVA
+              - paragraph: Computer Science @ University of Virginia
+          - generic:
+            - generic:
+              - paragraph: Focus
+              - paragraph: Applied AI / software engineering
+          - generic:
+            - generic:
+              - paragraph: Open
+              - paragraph: Seeking Summer & Fall 2026 internships
+      - region:
+        - generic:
+          - paragraph: System · 02 of 05
+          - heading [level=2]: Experience
+          - paragraph: 4 roles · 2 active
+        - generic:
+          - generic:
+            - generic:
+              - paragraph: 2024 — Present
+              - heading [level=3]: Software Development Intern
+              - paragraph: ManTech
+              - list:
+                - listitem:
+                  - generic: —
+                  - generic: Migrating a legacy DoD system used at 100+ locations worldwide to a modern microservices architecture using Django, React, GCP, PostgreSQL, and AI.
+                - listitem:
+                  - generic: —
+                  - generic: Built an AI query system using LangGraph and Gemini Flash that translates natural language into complex database searches, reducing query time from 3 minutes to 20 seconds.
+                - listitem:
+                  - generic: —
+                  - generic: Built 4 Django microservices with GraphQL and PostgreSQL with resilient, monitored services.
+                - listitem:
+                  - generic: —
+                  - generic: Created an AI pipeline using OCR and Gemini to process vehicle label images, cutting data entry time from 2+ hours to 10 minutes per batch.
+                - listitem:
+                  - generic: —
+                  - generic: Developed React interfaces that streamlined workflows from 8 steps to 4, improving data-entry efficiency by 50%.
+          - generic:
+            - generic:
+              - paragraph: Nov 2025 — Present
+              - heading [level=3]: Software Engineer (Applied ML)
+              - paragraph: Candlefish
+              - list:
+                - listitem:
+                  - generic: —
+                  - generic: Designed a data synthesis engine that auto-generated 10K architectural blueprints with labeled structural elements, eliminating a 200+ hour manual labeling bottleneck.
+                - listitem:
+                  - generic: —
+                  - generic: Built a PyTorch U-Net segmentation model achieving 0.89 mean IoU across 6 blueprint classes with 18ms inference time.
+          - generic:
+            - generic:
+              - paragraph: May 2024 — Aug 2024
+              - heading [level=3]: Software Development Intern
+              - paragraph: MyEdMaster
+              - list:
+                - listitem:
+                  - generic: —
+                  - generic: Built a personalized AI tutoring system using LangChain, GPT-4, and ChromaDB that adapts to individual student learning styles for AP Calculus and algebra.
+                - listitem:
+                  - generic: —
+                  - generic: Created an automated pipeline using Selenium and BeautifulSoup to extract and structure educational content from web sources for AI-powered tutoring.
+          - generic:
+            - generic:
+              - paragraph: Incoming Aug 2026 · incoming
+              - heading [level=3]: Software Development Intern
+              - paragraph: IBM
+              - list:
+                - listitem:
+                  - generic: —
+                  - generic: Incoming August 2026
+      - region:
+        - generic:
+          - paragraph: System · 03 of 05
+          - heading [level=2]: Projects
+          - paragraph: 4 systems · built from scratch
+        - generic:
+          - generic:
+            - generic:
+              - heading [level=3]: FeatherDB
+              - paragraph: A lightweight, file-based relational database engine built from the ground up in Java. FeatherDB implements a custom SQL-like query language with a complete parser, query optimizer, and execution engine, using the file system for persistent data storage.
+              - generic:
+                - generic: Java
+                - generic: Maven
+                - generic: JUnit
+              - link:
+                - /url: https://github.com/whozpj/featherdb
+                - text: GitHub →
+          - generic:
+            - generic:
+              - heading [level=3]: GitGuard
+              - paragraph: Multi-agent AI-powered code analysis platform that automatically reviews GitHub repositories to identify security vulnerabilities, optimize performance, and generate documentation using LLMs.
+              - generic:
+                - generic: LangChain
+                - generic: Llama 3.1
+                - generic: FastAPI
+                - generic: Python
+                - generic: PostgreSQL
+                - generic: Pinecone
+                - generic: Docker
+                - generic: Heroku
+          - generic:
+            - generic:
+              - heading [level=3]: MLB Pitcher Injury Predictor
+              - paragraph: A real-time injury monitoring system for MLB pitchers that analyzes pitch sequences to predict potential injuries before they occur.
+              - generic:
+                - generic: Python
+                - generic: PyTorch
+                - generic: FastAPI
+                - generic: React
+                - generic: PostgreSQL
+                - generic: MLB Statcast
+                - generic: AWS
+          - generic:
+            - generic:
+              - heading [level=3]: Animal Behavior Recognition System
+              - paragraph: A computer vision system that detects, counts, and tracks animals in images and videos while classifying their poses to identify and monitor behaviors over time.
+              - generic:
+                - generic: Python
+                - generic: OpenCV
+                - generic: PyTorch
+      - region:
+        - generic:
+          - paragraph: System · 04 of 05
+          - heading [level=2]: Skills
+          - paragraph: 5 clusters
+        - generic:
+          - generic:
+            - generic:
+              - heading [level=3]: Languages
+              - generic:
+                - generic: Python
+                - generic: TypeScript
+                - generic: Java
+                - generic: JavaScript
+                - generic: SQL
+                - generic: R
+                - generic: Assembly
+                - generic: C
+          - generic:
+            - generic:
+              - heading [level=3]: Frameworks & Libraries
+              - generic:
+                - generic: Django
+                - generic: FastAPI
+                - generic: React.js
+                - generic: GraphQL
+                - generic: REST API
+                - generic: NumPy
+                - generic: Pandas
+                - generic: Node.js
+          - generic:
+            - generic:
+              - heading [level=3]: AI / ML
+              - generic:
+                - generic: LangChain
+                - generic: LangGraph
+                - generic: PyTorch
+                - generic: ChromaDB
+                - generic: RAG Pipelines
+                - generic: Agentic AI
+                - generic: GPT-4
+                - generic: Gemini
+                - generic: Llama
+          - generic:
+            - generic:
+              - heading [level=3]: Infrastructure & DevOps
+              - generic:
+                - generic: AWS
+                - generic: GCP
+                - generic: Azure
+                - generic: Docker
+                - generic: PostgreSQL
+                - generic: CI/CD
+                - generic: Git/GitHub
+                - generic: Jira
+                - generic: Confluence
+                - generic: VSCode
+          - generic:
+            - generic:
+              - heading [level=3]: Certifications
+              - generic:
+                - generic: AWS Cloud Practitioner
+                - generic: Microsoft Azure Fundamentals (AZ-900)
+                - generic: MTA Security Fundamentals
+      - region:
+        - generic:
+          - paragraph: System · 05 of 05
+          - heading [level=2]: Contact
+          - paragraph: 4 beacons
+        - generic:
+          - generic:
+            - link:
+              - /url: mailto:wyp9mq@virginia.edu
+              - paragraph: Email
+              - paragraph: mailto:wyp9mq@virginia.edu
+          - generic:
+            - link:
+              - /url: https://www.linkedin.com/in/prithvi-raj-7015a0250/
+              - paragraph: LinkedIn
+              - paragraph: https://www.linkedin.com/in/prithvi-raj-7015a0250/
+          - generic:
+            - link:
+              - /url: https://github.com/whozpj
+              - paragraph: GitHub
+              - paragraph: https://github.com/whozpj
+          - generic:
+            - link:
+              - /url: /resume.pdf
+              - paragraph: Resume
+              - paragraph: /resume.pdf
+  - generic:
+    - generic:
+      - paragraph: The portfolio of
+      - heading "Prithvi Raj" [level=1]
+      - paragraph: CS · UVA · SWE & Applied AI
+    - generic [ref=e5]:
+      - link "[ Resume ]" [ref=e6] [cursor=pointer]:
+        - /url: /resume.pdf
+      - button "[ Contact ]" [ref=e7]
+      - button "[ Home ]" [ref=e8]
+    - generic:
+      - paragraph: Scroll to traverse
+    - generic:
+      - paragraph: System · 01 of 05
+      - heading "About" [level=2]
+      - paragraph: Who · What · Where
+  - generic [ref=e9]:
+    - generic [ref=e10]: About
+    - button "Jump to About" [ref=e11]
+    - button "Jump to Experience" [ref=e12]
+    - button "Jump to Projects" [ref=e13]
+    - button "Jump to Skills" [ref=e14]
+    - button "Jump to Contact" [ref=e15]
+    - generic [ref=e16]: Contact
+  - alert [ref=e21]

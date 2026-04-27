@@ -1,5 +1,0 @@
-/* Galaxy page overrides root body so WebGL clear color matches the DOM fallback */
-html:has(body > .galaxy-root),
-body:has(.galaxy-root) {
-  background: #030308;
-}

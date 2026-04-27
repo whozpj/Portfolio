@@ -52,5 +52,16 @@ export const experienceSystem: System = {
         "Cut ~15 hours of manual data prep by engineering an ETL pipeline with Selenium and BeautifulSoup to scrape and transform 750 pages of unstructured web content into ChromaDB-indexed JSON for retrieval.",
       ],
     },
+    {
+      id: "ibm",
+      kind: "experience",
+      label: "IBM",
+      orbit: "comet",
+      role: "Software Engineer Intern",
+      company: "IBM",
+      dateRange: "May 2026 — Aug 2026",
+      status: "incoming",
+      bullets: [],
+    },
   ],
 };

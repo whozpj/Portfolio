@@ -1,25 +1,15 @@
-import { Inter } from 'next/font/google';
+import type { Metadata } from "next";
 import "./globals.css";
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600'],
-  variable: '--font-inter',
-});
-
-export const metadata = {
-  title: "Prithvi Raj",
-  description: "Software Engineer Portfolio",
+export const metadata: Metadata = {
+  title: "Prithvi Raj · Software Engineer",
+  description: "Software Engineer focused on applied AI and backend systems. CS @ UVA.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0b0b0b] text-white antialiased`}>
+      <body className="bg-[#0a0a0a] text-white antialiased">
         {children}
       </body>
     </html>
